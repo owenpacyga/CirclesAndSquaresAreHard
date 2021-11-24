@@ -137,7 +137,7 @@ namespace CirclesAndSpheresAreHard
                 Console.WriteLine("What do you know about the sphere? If you know the radius, enter R.");
                 Console.WriteLine("If you know the diameter, enter D. If you know the surface area, enter S.");
                 Console.WriteLine("If you know the volume, enter V.");
-                Console.WriteLine("hi ;)");
+                
             }
 
             else
