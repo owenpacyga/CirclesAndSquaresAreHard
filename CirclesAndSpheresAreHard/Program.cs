@@ -143,6 +143,7 @@ namespace CirclesAndSpheresAreHard
                 Console.WriteLine("What do you know about the sphere? If you know the radius, enter R.");
                 Console.WriteLine("If you know the diameter, enter D. If you know the surface area, enter S.");
                 Console.WriteLine("If you know the volume, enter V.");
+                Console.WriteLine();
                 string whatDoWeKnowString = Console.ReadLine();
                 whatDoWeKnow = Convert.ToChar(whatDoWeKnowString);
 
@@ -152,6 +153,12 @@ namespace CirclesAndSpheresAreHard
                     string radiusString = Console.ReadLine();
                     bool didRadiusParse = float.TryParse((radiusString), out float radius);
 
+                    if(didRadiusParse == false)
+                    {
+                        Console.WriteLine("You did not input a valid responce.");
+                        return;
+                    }
+
                     float diameter = radius * 2;
                     float surfaceArea = 4 * vauleOfPi * radius * radius;
                     float volume = (4.0f / 3.0f) * vauleOfPi * radius * radius * radius;
@@ -160,6 +167,27 @@ namespace CirclesAndSpheresAreHard
                     Console.WriteLine("The surface area is: " + surfaceArea);
                     Console.WriteLine("The volume is: " + volume);
                 }
+
+                if (whatDoWeKnow == 'D' || whatDoWeKnow == 'd')
+                {
+                    Console.WriteLine("What is the diameter?");
+                    string diameterString = Console.ReadLine();
+                    bool didDiameterParse = float.TryParse((diameterString), out float diameter);
+
+                    if (didDiameterParse == false)
+                    {
+                        Console.WriteLine("You did not input a vailid responce.");
+                        return;
+                    }
+
+                    float radius = diameter / 2;
+                    float surfaceArea = 4 * vauleOfPi * radius * radius;
+                    float volume = (4.0f / 3.0f) * vauleOfPi * radius * radius * radius;
+                    Console.WriteLine("The radius is: " + radius);
+                    Console.WriteLine("The surface area is: " + surfaceArea);
+                    Console.WriteLine("The volume is: " + volume);
+                }
+
 
             }
 
