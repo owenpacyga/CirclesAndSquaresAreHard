@@ -142,7 +142,7 @@ namespace CirclesAndSpheresAreHard
             {
                 Console.WriteLine("What do you know about the sphere? If you know the radius, enter R.");
                 Console.WriteLine("If you know the diameter, enter D. If you know the surface area, enter S.");
-                Console.WriteLine("If you know the volume, enter V.");
+                Console.WriteLine("If you know the volume, enter V. if you know the curcumference, enter C.");
                 Console.WriteLine();
                 string whatDoWeKnowString = Console.ReadLine();
                 whatDoWeKnow = Convert.ToChar(whatDoWeKnowString);
@@ -162,10 +162,12 @@ namespace CirclesAndSpheresAreHard
                     float diameter = radius * 2;
                     float surfaceArea = 4 * vauleOfPi * radius * radius;
                     float volume = (4.0f / 3.0f) * vauleOfPi * radius * radius * radius;
+                    float curcumference = 2 * vauleOfPi * radius;
                     //Put the .0f so then it knows to have decimal places, with the f to specify it as a float
                     Console.WriteLine("The diameter is: " + diameter);
                     Console.WriteLine("The surface area is: " + surfaceArea);
                     Console.WriteLine("The volume is: " + volume);
+                    Console.WriteLine("The curcumference is: " + curcumference);
                 }
 
                 if (whatDoWeKnow == 'D' || whatDoWeKnow == 'd')
@@ -183,9 +185,11 @@ namespace CirclesAndSpheresAreHard
                     float radius = diameter / 2;
                     float surfaceArea = 4 * vauleOfPi * radius * radius;
                     float volume = (4.0f / 3.0f) * vauleOfPi * radius * radius * radius;
+                    float curcumference = 2 * vauleOfPi * radius;
                     Console.WriteLine("The radius is: " + radius);
                     Console.WriteLine("The surface area is: " + surfaceArea);
                     Console.WriteLine("The volume is: " + volume);
+                    Console.WriteLine("The curcumference is: " + curcumference);
                 }
 
 
