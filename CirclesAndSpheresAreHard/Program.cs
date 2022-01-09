@@ -26,6 +26,7 @@ namespace CirclesAndSpheresAreHard
             Console.Write("If you want to calculate circles, type 'C'. If you want to claculate spheres, type in 'S': ");
             string spheresOrCircle = Console.ReadLine();
 
+            //cOrS stands for Circles Or Spheres
             char cOrS;
             cOrS = Convert.ToChar(spheresOrCircle);
 
@@ -58,8 +59,7 @@ namespace CirclesAndSpheresAreHard
 
                     Console.WriteLine("The diameter is " + diameter);
                     Console.WriteLine("The curcumference is " + curcumference);
-                    Console.WriteLine("The area is " + area + " units squared");
-
+                    Console.WriteLine("The area is " + area);
                 }
 
                 //This code runs in the user knows the diameter
@@ -81,8 +81,7 @@ namespace CirclesAndSpheresAreHard
 
                     Console.WriteLine("The radius is: " + radius);
                     Console.WriteLine("The curcumference is: " + curcumference);
-                    Console.WriteLine("The area is: " + area + " units squared");
-
+                    Console.WriteLine("The area is: " + area);
                 }
 
                 else if (whatDoWeKnow == 'C' || whatDoWeKnow == 'c')
@@ -103,7 +102,7 @@ namespace CirclesAndSpheresAreHard
 
                     Console.WriteLine("The radius is: " + radius);
                     Console.WriteLine("The diameter is: " + diameter);
-                    Console.WriteLine("The area is: " + area + " units squared");
+                    Console.WriteLine("The area is: " + area);
                 }
 
                 else if (whatDoWeKnow == 'A' || whatDoWeKnow == 'a')
@@ -119,7 +118,6 @@ namespace CirclesAndSpheresAreHard
                     }
 
                     //double theSquareRoot = Math.Sqrt(x); (example for how to use square root)
-
                     double radiusDouble = Math.Sqrt(area / vauleOfPi);
                     float radius = (float)radiusDouble;
                     float diameter = radius * 2;
