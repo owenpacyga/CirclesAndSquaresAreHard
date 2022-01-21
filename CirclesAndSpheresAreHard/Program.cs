@@ -190,6 +190,28 @@ namespace CirclesAndSpheresAreHard
                     Console.WriteLine("The curcumference is: " + curcumference);
                 }
 
+                if (whatDoWeKnow == 'S' || whatDoWeKnow == 's')
+                {
+                    Console.WriteLine("What is the surface area?");
+                    string surfaceAreaString = Console.ReadLine();
+                    bool didSurfaceAreaParse = float.TryParse((surfaceAreaString), out float surfaceArea);
+
+                    if(didSurfaceAreaParse == false)
+                    {
+                        Console.WriteLine("You did not input a valid response.");
+                        return;
+                    }
+
+                    double radius = Math.Sqrt(surfaceArea / (4 * vauleOfPi)); 
+                    double diameter = radius * 2;
+                    double voulume = (4.0d / 3.0d) * vauleOfPi * radius * radius * radius;
+                    double curcumference = 2 * vauleOfPi * radius;
+                    Console.WriteLine("The radius is: " + radius);
+                    Console.WriteLine("The diameter is: " + diameter);
+                    Console.WriteLine("The volume is: " + voulume);
+                    Console.WriteLine("The curcumference is: " + curcumference);
+                }
+
 
             }
 
