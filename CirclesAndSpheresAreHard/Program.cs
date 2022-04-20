@@ -141,7 +141,6 @@ namespace CirclesAndSpheresAreHard
                 Console.WriteLine("What do you know about the sphere? If you know the radius, enter R.");
                 Console.WriteLine("If you know the diameter, enter D. If you know the surface area, enter S.");
                 Console.WriteLine("If you know the volume, enter V. if you know the curcumference, enter C.");
-                Console.WriteLine();
                 string whatDoWeKnowString = Console.ReadLine();
                 whatDoWeKnow = Convert.ToChar(whatDoWeKnowString);
 
@@ -194,7 +193,7 @@ namespace CirclesAndSpheresAreHard
                 {
                     Console.WriteLine("What is the surface area?");
                     string surfaceAreaString = Console.ReadLine();
-                    bool didSurfaceAreaParse = float.TryParse((surfaceAreaString), out float surfaceArea);
+                    bool didSurfaceAreaParse = float.TryParse((surfaceAreaString),out float surfaceArea);
 
                     if(didSurfaceAreaParse == false)
                     {
@@ -204,15 +203,37 @@ namespace CirclesAndSpheresAreHard
 
                     double radius = Math.Sqrt(surfaceArea / (4 * vauleOfPi)); 
                     double diameter = radius * 2;
-                    double voulume = (4.0d / 3.0d) * vauleOfPi * radius * radius * radius;
+                    double volume = (4.0d / 3.0d) * vauleOfPi * radius * radius * radius;
                     double curcumference = 2 * vauleOfPi * radius;
                     Console.WriteLine("The radius is: " + radius);
                     Console.WriteLine("The diameter is: " + diameter);
-                    Console.WriteLine("The volume is: " + voulume);
+                    Console.WriteLine("The volume is: " + volume);
                     Console.WriteLine("The curcumference is: " + curcumference);
                 }
 
+                if(whatDoWeKnow == 'v'|| whatDoWeKnow == 'V')
+                {
+                    Console.WriteLine("What is the volume?");
+                    string volumeString = Console.ReadLine();
+                    bool didVolumeParse = double.TryParse((volumeString), out double volume);
 
+                    if(didVolumeParse == false)
+                    {
+                        Console.WriteLine("You did not input a valid response");
+                    }
+
+                    double radiusPartOne = 3 * (volume / (4 * vauleOfPi));
+                    double radius = Math.Pow(radiusPartOne, (1.0 / 3.0));
+
+                    double diameter = radius * 2;
+                    double circumference = 2 * vauleOfPi * radius;
+                    double surfaceArea = 4 * vauleOfPi * (radius * radius);
+
+                    Console.WriteLine("The radius is: " + radius );
+                    Console.WriteLine("The diameter is: " + diameter);
+                    Console.WriteLine("The circumference is: " + circumference);
+                    Console.WriteLine("The surface area is: " + surfaceArea);
+                }
             }
 
             else
